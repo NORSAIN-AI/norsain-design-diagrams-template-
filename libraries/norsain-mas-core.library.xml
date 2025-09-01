@@ -1,0 +1,36 @@
+<mxlibrary>
+[
+  {
+    "xml":"<shape label=\"Agent (Generic)\" style=\"shape=rectangle;rounded=1;fillColor=#E6FFFA;strokeColor=#00B9AE;strokeWidth=2;fontFamily=Montserrat;fontSize=12;whiteSpace=wrap;align=center;\"/>",
+    "w":120,"h":60,"title":"Agent (Generic)"
+  },
+  {
+    "xml":"<shape label=\"Agent (Role: A/R/G/S)\" style=\"shape=rectangle;rounded=1;fillColor=#E6FFFA;strokeColor=#00B9AE;strokeWidth=2;fontFamily=Montserrat;fontSize=12;whiteSpace=wrap;align=center;\"/>",
+    "w":140,"h":60,"title":"Agent (Role)"
+  },
+  {
+    "xml":"<shape label=\"Event Bus\" style=\"shape=datastore;fillColor=#FFFFFF;strokeColor=#111827;dashed=1;strokeWidth=2;fontFamily=Montserrat;fontSize=12;whiteSpace=wrap;align=center;\"/>",
+    "w":160,"h":60,"title":"Event Bus"
+  },
+  {
+    "xml":"<shape label=\"Queue\" style=\"shape=process;rounded=1;fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=2;fontFamily=Montserrat;fontSize=12;whiteSpace=wrap;align=center;\"/>",
+    "w":120,"h":60,"title":"Queue"
+  },
+  {
+    "xml":"<shape label=\"Datastore\" style=\"shape=cylinder;fillColor=#E0E7FF;strokeColor=#3B82F6;strokeWidth=2;fontFamily=Montserrat;fontSize=12;whiteSpace=wrap;align=center;\"/>",
+    "w":80,"h":80,"title":"Datastore"
+  },
+  {
+    "xml":"<shape label=\"Ledger (QuorumCore)\" style=\"shape=hexagon;fillColor=#F3F4F6;strokeColor=#374151;strokeWidth=2;fontFamily=Montserrat;fontSize=12;whiteSpace=wrap;align=center;\"/>",
+    "w":120,"h":60,"title":"Ledger"
+  },
+  {
+    "xml":"<shape label=\"Policy Gate\" style=\"shape=hexagon;fillColor=#FEE2E2;strokeColor=#EF4444;strokeWidth=2;fontFamily=Montserrat;fontSize=12;whiteSpace=wrap;align=center;\"/>",
+    "w":100,"h":60,"title":"Policy Gate"
+  },
+  {
+    "xml":"<shape label=\"Boundary / Trust Zone\" style=\"shape=swimlane;horizontal=0;fillColor=#F9FAFB;strokeColor=#9CA3AF;strokeWidth=2;fontFamily=Montserrat;fontSize=12;whiteSpace=wrap;align=center;\"/>",
+    "w":200,"h":120,"title":"Boundary / Trust Zone"
+  }
+]
+</mxlibrary>
