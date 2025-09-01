@@ -32,5 +32,33 @@
     "xml":"<shape label=\"Boundary / Trust Zone\" style=\"shape=swimlane;horizontal=0;fillColor=#F9FAFB;strokeColor=#9CA3AF;strokeWidth=2;fontFamily=Montserrat;fontSize=12;whiteSpace=wrap;align=center;\"/>",
     "w":200,"h":120,"title":"Boundary / Trust Zone"
   }
-]
+],
+  {
+    "xml":"<shape label=\"Monitor Agent\" style=\"shape=ellipse;fillColor=#EDE9FE;strokeColor=#8B5CF6;strokeWidth=2;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":100,"h":60,"title":"Monitor Agent"
+  },
+  {
+    "xml":"<shape label=\"Scheduler\" style=\"shape=parallelogram;fillColor=#FFEDD5;strokeColor=#F97316;strokeWidth=2;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":120,"h":60,"title":"Scheduler"
+  },
+  {
+    "xml":"<shape label=\"External System\" style=\"shape=rectangle;rounded=1;fillColor=#F3F4F6;strokeColor=#9CA3AF;strokeWidth=2;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":140,"h":60,"title":"External System"
+  },
+  {
+    "xml":"<shape label=\"Knowledge Base\" style=\"shape=cylinder;fillColor=#FEF9C3;strokeColor=#FACC15;strokeWidth=2;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":100,"h":80,"title":"Knowledge Base"
+  },
+  {
+    "xml":"<shape label=\"Audit Log\" style=\"shape=cylinder;fillColor=#FEE2E2;strokeColor=#B91C1C;strokeWidth=2;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":100,"h":80,"title":"Audit Log"
+  },
+  {
+    "xml":"<shape label=\"Decision Node\" style=\"shape=rhombus;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":80,"h":80,"title":"Decision Node"
+  },
+  {
+    "xml":"<shape label=\"Human-in-the-Loop\" style=\"shape=umlActor;fillColor=#D1FAE5;strokeColor=#10B981;strokeWidth=2;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":80,"h":120,"title":"Human-in-the-Loop"
+  }
 </mxlibrary>
