@@ -1,0 +1,32 @@
+<mxlibrary>
+[
+  {
+    "xml":"<shape label=\"Sync Request/Response\" style=\"edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#111827;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":160,"h":40,"title":"Sync Request/Response"
+  },
+  {
+    "xml":"<shape label=\"Async Event\" style=\"edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeWidth=2;strokeColor=#111827;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":160,"h":40,"title":"Async Event"
+  },
+  {
+    "xml":"<shape label=\"Pub/Sub Topic\" style=\"shape=ellipse;fillColor=#FFFFFF;strokeColor=#3B82F6;strokeWidth=2;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":120,"h":60,"title":"Pub/Sub Topic"
+  },
+  {
+    "xml":"<shape label=\"Message Broker\" style=\"shape=datastore;fillColor=#E0E7FF;strokeColor=#3B82F6;strokeWidth=2;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":120,"h":80,"title":"Message Broker"
+  },
+  {
+    "xml":"<shape label=\"API Gateway\" style=\"shape=hexagon;fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=2;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":140,"h":60,"title":"API Gateway"
+  },
+  {
+    "xml":"<shape label=\"Webhook\" style=\"shape=parallelogram;fillColor=#FFFFFF;strokeColor=#10B981;strokeWidth=2;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":140,"h":60,"title":"Webhook"
+  },
+  {
+    "xml":"<shape label=\"Data Stream\" style=\"shape=trapezoid;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontFamily=Montserrat;fontSize=12;\"/>",
+    "w":160,"h":60,"title":"Data Stream"
+  }
+]
+</mxlibrary>
