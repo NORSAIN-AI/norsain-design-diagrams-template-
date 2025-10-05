@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "davidanson.vscode-markdownlint",
+    "esbenp.prettier-vscode",
+    "redhat.vscode-yaml",
+    "github.vscode-github-actions"
+  ],
+  "unwantedRecommendations": [
+    // hold lista kort; bruk bare hvis dere VET det skaper støy
+  ]
+}

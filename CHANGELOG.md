@@ -1,6 +1,6 @@
 # Changelog – NORSAIN Draw.io Library
 
-Alle vesentlige endringer i dette repoet logges her.  
+Alle vesentlige endringer i dette repoet logges her.
 Format: *Dato – Versjon – Endring – Kommentar*
 
 ---
@@ -31,8 +31,8 @@ Format: *Dato – Versjon – Endring – Kommentar*
 
 ## Planlagt [v1.1.0]
 - Legge til `norsain-mas-comm.library.xml` (kommunikasjonsformer).
-- Opprette maler:  
-  - `template-mas-sequence.drawio`  
-  - `template-mas-bpmn-collab.drawio`  
+- Opprette maler:
+  - `template-mas-sequence.drawio`
+  - `template-mas-bpmn-collab.drawio`
   - `template-c4-context-mas.drawio`
 - Importere SVG-ikoner (agent, bus, ledger, datastore).

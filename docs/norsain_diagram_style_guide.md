@@ -28,8 +28,8 @@ Denne guiden definerer **beste praksis 2025** for hvordan NORSAIN designer og br
 ---
 
 ## ✍️ Typografi
-- **Font:** Montserrat (Regular for tekst, Bold for titler).  
-- **Størrelse:** 12–13 pt for standardformer, 14–16 pt for overskrifter.  
+- **Font:** Montserrat (Regular for tekst, Bold for titler).
+- **Størrelse:** 12–13 pt for standardformer, 14–16 pt for overskrifter.
 - **Farge:** #111827 (nesten svart) for tekst.
 
 ---
@@ -82,9 +82,9 @@ Alle Q-symboler lagres som **SVG i assets/** og i et eget bibliotek `norsain-sym
 ---
 
 ## 📜 Navnekonvensjoner
-- **Agenter:** `AG-[AREA]-[ROLE]-[ID]`  
-- **Gateway/Decision:** `GW-[NAME]-[ID]`  
-- **Datastrukturer:** `DS-[NAME]-[ID]`  
+- **Agenter:** `AG-[AREA]-[ROLE]-[ID]`
+- **Gateway/Decision:** `GW-[NAME]-[ID]`
+- **Datastrukturer:** `DS-[NAME]-[ID]`
 - **Symboler (Q):** `Q-[FAMILY]-[ID]`
 
 Eksempel: `AG-NORTH-PLANNER-0001`, `DS-LEDGER-001`, `Q-ENGINE-001`.
@@ -110,4 +110,3 @@ Eksempel: `AG-NORTH-PLANNER-0001`, `DS-LEDGER-001`, `Q-ENGINE-001`.
 | Godkjent av | –                      |
 | Status      | Draft                  |
 | Kontakt     | hs@norsain.com         |
-

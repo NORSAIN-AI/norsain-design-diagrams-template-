@@ -1,0 +1,12 @@
+# Code owners for NORSAIN Design Diagrams Template
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/managing-repository-settings/about-code-owners
+
+# Design and diagram changes require review from design team
+/docs/** @NORSAIN-AI/design-maintainers
+
+# CI/CD and GitHub configuration
+/.github/** @NORSAIN-AI/design-maintainers
+
+# Copilot and AI assistance documentation
+/copilot/** @NORSAIN-AI/design-maintainers
+COPILOT-POLICY.md @NORSAIN-AI/design-maintainers
