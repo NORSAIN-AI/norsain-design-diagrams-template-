@@ -1,0 +1,50 @@
+{
+  "name": "NORSAIN Diagrams",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "username": "vscode",
+      "installZsh": false,
+      "configureZshAsDefaultShell": false
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode",
+        "redhat.vscode-yaml",
+        "github.vscode-github-actions",
+        "davidanson.vscode-markdownlint"
+      ],
+      "settings": {
+        "telemetry.telemetryLevel": "off",
+        "workbench.enableExperiments": false,
+        "extensions.ignoreRecommendations": true,
+        "extensions.autoCheckUpdates": false,
+        "extensions.autoUpdate": false,
+        "editor.formatOnSave": true,
+        "files.eol": "\n",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[markdown]": {
+          "editor.wordWrap": "bounded",
+          "editor.rulers": [100]
+        },
+        "yaml.validate": true,
+        "yaml.schemas": {
+          "https://json.schemastore.org/github-workflow.json": ".github/workflows/*.yml"
+        }
+      }
+    }
+  },
+  "containerEnv": {
+    "PUPPETEER_SKIP_DOWNLOAD": "false"
+  },
+  "updateContentCommand": "bash .devcontainer/postCreate.sh",
+  "postStartCommand": "git config --global --add safe.directory /workspaces/${containerWorkspaceFolderBasename}",
+  "remoteUser": "vscode"
+}
