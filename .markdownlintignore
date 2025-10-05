@@ -1,0 +1,4 @@
+node_modules/
+rendered/
+**/*.drawio
+docs/diagrams/**/*.mmd

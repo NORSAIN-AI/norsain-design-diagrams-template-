@@ -1,7 +1,7 @@
 # Version
 
-**Current Version:** v1.0.0  
-**Release Date:** 2025-09-01  
+**Current Version:** v1.0.0
+**Release Date:** 2025-09-01
 
 ---
 

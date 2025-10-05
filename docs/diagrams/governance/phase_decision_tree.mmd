@@ -1,0 +1,26 @@
+%%{init: { "theme": "base", "themeVariables": {
+  "fontFamily": "Montserrat, Roboto, Arial, sans-serif",
+  "textColor": "#212121",
+  "primaryColor": "#E0F2F1",
+  "primaryBorderColor": "#009688",
+  "lineColor": "#009688",
+  "secondaryColor": "#F5F5F5"
+}}}%%
+flowchart TB
+  classDef q fill:#E0F2F1,stroke:#009688,stroke-width:1.5px,rx:8,ry:8,color:#212121
+  classDef ok fill:#E6FAEF,stroke:#00C853,stroke-width:1.5px,rx:6,ry:6,color:#212121
+  classDef warn fill:#FFF8E1,stroke:#FF6D00,stroke-width:1.5px,rx:6,ry:6,color:#212121
+
+  Q1{{Har repoet secrets / tilkoblinger?}}:::q
+  Q2{{Er flere utviklere aktive (PR eller CI)?}}:::q
+  Q3{{Har repo prod-ansvar eller sky-tilgang?}}:::q
+  Q4{{Kritikalitet medium eller høy?}}:::q
+
+  Q1 -- Nei --> Q2
+  Q1 -- Ja --> F2[Fase 2]:::ok
+  Q2 -- Nei --> F1[Fase 1]:::ok
+  Q2 -- Ja --> Q3
+  Q3 -- Nei --> F2b[Fase 2]:::ok
+  Q3 -- Ja --> Q4
+  Q4 -- Lav --> F2c[Fase 2]:::ok
+  Q4 -- Medium/høy --> F3[Fase 3]:::warn

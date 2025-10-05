@@ -1,0 +1,128 @@
+name: Validate Diagrams
+
+on:
+  pull_request:
+    paths:
+      - 'docs/diagrams/**'
+      - 'docs/mermaid-theme.json'
+      - '.github/workflows/validate-diagrams.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/diagrams/**'
+      - 'docs/mermaid-theme.json'
+
+jobs:
+  validate-mermaid:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Mermaid CLI
+        run: npm install -g @mermaid-js/mermaid-cli@10.9.1
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ca-certificates fonts-liberation
+
+      - name: Find and validate Mermaid files
+        run: |
+          # Find all .mmd files under docs/diagrams/
+          mermaid_files=$(find docs/diagrams -name "*.mmd" -type f 2>/dev/null | sort)
+
+          if [ -z "$mermaid_files" ]; then
+            echo "ℹ️  No Mermaid files found in docs/diagrams/"
+            exit 0
+          fi
+
+          echo "📊 Found Mermaid files:"
+          echo "$mermaid_files" | sed 's/^/- /'
+
+          # Validate each file
+          failed_files=""
+          for file in $mermaid_files; do
+            echo "🔍 Validating $file..."
+            if mmdc -i "$file" -o "/tmp/$(basename "$file" .mmd).svg" --configFile docs/mermaid-theme.json --quiet; then
+              echo "✅ $file - Valid"
+            else
+              echo "❌ $file - Failed validation"
+              failed_files="$failed_files $file"
+            fi
+          done
+
+          # Check for binary files that shouldn't be committed
+          binary_files=$(find docs/diagrams -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.svg" \) 2>/dev/null)
+
+          if [ -n "$binary_files" ]; then
+            echo "❌ Binary files found in docs/diagrams/ (should not be committed):"
+            echo "$binary_files"
+            exit 1
+          fi
+
+          # Report results
+          if [ -n "$failed_files" ]; then
+            echo "❌ Validation failed for:$failed_files"
+            exit 1
+          else
+            echo "🎉 All Mermaid diagrams validated successfully!"
+          fi
+
+  render-diagrams:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    needs: validate-mermaid
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Mermaid CLI
+        run: npm install -g @mermaid-js/mermaid-cli@10.9.1
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ca-certificates fonts-liberation
+
+      - name: Render PNG and SVG artifacts
+        run: |
+          mkdir -p artifacts
+
+          # Find all .mmd files
+          mermaid_files=$(find docs/diagrams -name "*.mmd" -type f 2>/dev/null | sort)
+
+          for file in $mermaid_files; do
+            base_name=$(basename "$file" .mmd)
+            dir_name=$(dirname "$file" | sed 's|docs/diagrams/||')
+
+            # Create directory structure in artifacts
+            mkdir -p "artifacts/$dir_name"
+
+            echo "🎨 Rendering $file..."
+
+            # Render PNG
+            mmdc -i "$file" -o "artifacts/$dir_name/${base_name}.png" --configFile docs/mermaid-theme.json --quiet --width 1200
+
+            # Render SVG
+            mmdc -i "$file" -o "artifacts/$dir_name/${base_name}.svg" --configFile docs/mermaid-theme.json --quiet
+
+            echo "✅ Generated artifacts/$dir_name/${base_name}.png and .svg"
+          done
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mermaid-diagrams
+          path: artifacts/
+          retention-days: 30
